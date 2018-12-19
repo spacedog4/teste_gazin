@@ -22,7 +22,7 @@ O projeto já inicia com um banco de dados com um registro, mas caso seja necess
 esse comando recria todas as tabelas do banco de dados de acordo com os arquivos de migração encontrados em `database/migrations`
 
 
-## Inicar servidor local
+## Iniciar servidor local
 
 Se você possui o PHP instalado localmente e configurado pode iniciar o servidor com o comando `php artisan server` o site vai ficar disponível através do endereço `http://localhost:8000`
 
