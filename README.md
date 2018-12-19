@@ -25,5 +25,3 @@ esse comando recria todas as tabelas do banco de dados de acordo com os arquivos
 ## Iniciar servidor local
 
 Se você possui o PHP instalado localmente e configurado pode iniciar o servidor com o comando `php artisan server` o site vai ficar disponível através do endereço `http://localhost:8000`
-
-Caso o contrario você pode utilizar programas como Xampp ou Wampp, mas a configuração 
