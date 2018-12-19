@@ -27,22 +27,18 @@ class FuncionarioRequest extends FormRequest
     {
         $rules = [
             'nome'      => 'required',
-            'sexo'      => 'required|in:Masculino,Feminino',
+            'sexo'      => 'required|in:' . implode(',', config('app.sexos')->keys()->all()),
             'idade'     => 'required|integer|min:16|max:80',
-            'tipo'      => 'required|in:P,A',
+            'tipo'      => 'required|in:' . implode(',', config('app.tipos')->keys()->all()),
             'linguagem' => [
                 'required_if:tipo,P',
                 'nullable',
-                Rule::in(['PHP', 'Java', 'C#', 'Python'])
+                Rule::in(config('app.linguagens')->keys()->all())
             ],
             'projeto'   => [
                 'required_if:tipo,A',
                 'nullable',
-                Rule::in([
-                    'Gestor Comercial',
-                    'Sistema para Farmacias',
-                    'SmartMarket'
-                ])
+                Rule::in(config('app.projetos')->keys()->all())
             ],
         ];
 

@@ -226,26 +226,26 @@ return [
 
     ],
 
-    'sexos' => [
+    'sexos' => collect([
         'Masculino' => 'Masculino',
         'Feminino' => 'Feminino'
-    ],
+    ]),
 
-    'tipos' => [
+    'tipos' => collect([
         'P' => 'Programador',
         'A' => 'Analista'
-    ],
+    ]),
 
-    'linguagens' => [
+    'linguagens' => collect([
         'PHP' => 'PHP',
         'Java' => 'Java',
         'C#' => 'C#',
         'Python' => 'Python',
-    ],
+    ]),
 
-    'projetos' => [
+    'projetos' => collect([
         'Gestor Comercial' => 'Gestor Comercial',
         'Sistema para Farmacias' => 'Sistema para Farmacias',
         'SmartMarket' => 'SmartMarket'
-    ]
+    ])
 ];
