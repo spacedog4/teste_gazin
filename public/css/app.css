@@ -192,3 +192,22 @@ body {
   float: left;
 }
 
+#filter {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+#filter form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+#filter form .form-group {
+  margin: 0;
+  margin-right: 10px;
+}
+

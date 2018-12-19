@@ -19,14 +19,16 @@ $(document).delegate('#AddFuncionario .cancel', 'click', function () {
     $('#AddFuncionario').hide();
 });
 
-$(document).delegate('#inputTipo', 'change', function () {
-    $('#AddFuncionario .input-projeto, #AddFuncionario .input-linguagem').hide();
-    $('#inputLinguagem, #inputProjeto').val('').change();
+$(document).delegate('.input-tipo select', 'change', function () {
+    var $form = $(this).closest('form');
+
+    $form.find('.input-projeto, .input-linguagem').hide();
+    $form.find('.input-projeto select, .input-linguagem select').val('').change();
 
     if ($(this).val() == 'P') {
-        $('#AddFuncionario .input-linguagem').show();
+        $form.find('.input-linguagem').show();
     } else if ($(this).val() == 'A') {
-        $('#AddFuncionario .input-projeto').show();
+        $form.find('.input-projeto').show();
     }
 });
 
@@ -60,12 +62,21 @@ $(document).ready(function () {
     loadData();
 });
 
+$(document).delegate('#filter input', 'input', function () {
+    loadData();
+});
+
+$(document).delegate('#filter select', 'change', function () {
+    loadData();
+});
+
 function loadData() {
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         url: "/funcionarios/all",
+        data: $('#filter form').serialize(),
         type: 'GET',
         success: function (data) {
             $('#listAjax').html(data);

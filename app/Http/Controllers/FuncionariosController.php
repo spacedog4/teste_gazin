@@ -56,9 +56,31 @@ class FuncionariosController extends Controller
         return Response::json('success', 200);
     }
 
-    public function all()
+    public function all(Request $request)
     {
-        $funcionarios = Funcionario::latest()->get();
+        $query = Funcionario::latest()->where('nome', 'like', '%' . $request->nome . '%');
+
+        if ($request->idade) {
+            $query->where('idade', $request->idade);
+        }
+
+        if ($request->sexo) {
+            $query->where('sexo', $request->sexo);
+        }
+
+        if ($request->tipo) {
+            $query->where('tipo', $request->tipo);
+        }
+
+        if ($request->linguagem) {
+            $query->where('linguagem', $request->linguagem);
+        }
+
+        if ($request->projeto) {
+            $query->where('projeto', $request->projeto);
+        }
+
+        $funcionarios = $query->get();
 
         return view('funcionario.funcionarios', compact('funcionarios'));
     }
