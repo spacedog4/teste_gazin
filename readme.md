@@ -3,7 +3,7 @@ Teste para vaga de desenvolvedor ou analista na Gazin
 
 Projeto desenvolvido em PHP utilizando o framework Laravel 5.7.19 para desenvolvimento do backend e jQuery para desenvolvimento dos scripts de interação e Ajax
 
-## Requerimentos
+## Requisitos
 - PHP >= 7.1.3
 - OpenSSL PHP Extension
 - PDO PHP Extension
