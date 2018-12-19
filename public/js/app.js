@@ -7,6 +7,9 @@ $(document).delegate('#add', 'click', function () {
         type: 'GET',
         success: function (data) {
             $('#AddFuncionario').html(data).show();
+        },
+        error: function () {
+            alert("Ocorreu um erro ao abrir o formulario, tente novamente");
         }
     });
 
@@ -66,6 +69,9 @@ function loadData() {
         type: 'GET',
         success: function (data) {
             $('#listAjax').html(data);
+        },
+        error: function () {
+            alert("Ocorreu um erro ao carregar os funcionários, recarregue a página");
         }
     })
 }
@@ -79,6 +85,9 @@ function editFuncionario(id) {
         type: 'GET',
         success: function (data) {
             $('#AddFuncionario').html(data).show();
+        },
+        error: function () {
+            alert("Ocorreu um erro ao abrir o formulario, tente novamente");
         }
     });
 }
@@ -93,6 +102,9 @@ function removeFuncionario(id) {
             type: 'POST',
             success: function (data) {
                 loadData();
+            },
+            error: function () {
+                alert("Ocorreu um erro ao remover o funcionário, tente novamente");
             }
         });
     }
