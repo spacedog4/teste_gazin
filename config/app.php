@@ -226,4 +226,26 @@ return [
 
     ],
 
+    'sexos' => [
+        'Masculino' => 'Masculino',
+        'Feminino' => 'Feminino'
+    ],
+
+    'tipos' => [
+        'P' => 'Programador',
+        'A' => 'Analista'
+    ],
+
+    'linguagens' => [
+        'PHP' => 'PHP',
+        'Java' => 'Java',
+        'C#' => 'C#',
+        'Python' => 'Python',
+    ],
+
+    'projetos' => [
+        'Gestor Comercial' => 'Gestor Comercial',
+        'Sistema para Farmacias' => 'Sistema para Farmacias',
+        'SmartMarket' => 'SmartMarket'
+    ]
 ];

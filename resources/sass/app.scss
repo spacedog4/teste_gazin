@@ -1,14 +1,187 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overline: none;
+}
 
-.navbar-laravel {
+body {
+  font-family: "Roboto";
+  background-color: #f3f3f3;
+  color: #222;
+}
+
+#logo {
+  text-align: center;
+  font-size: 22px;
+  padding: 15px 0;
+  background-color: $blue;
+  color: #fff;
+  font-weight: bold;
+}
+
+#content {
+  padding: 25px;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+#add {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: $green;
+  padding: 7px 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: .2s;
+  font-size: 14px;
+  &:hover {
+    background-color: darken($green, 5%);
+  }
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  > a {
+    width: 48%;
+    padding: 7px 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .2s;
+    background-color: #666;
+    font-size: 14px;
+    text-align: center;
+    &.confirm {
+      background-color: $green;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(#222, .9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  .box {
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 500px;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+  input, select {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #666;
+  }
+  &.has-error {
+    label {
+      color: $red;
+    }
+    input, select {
+      border-color: $red;
+    }
+  }
+}
+
+.input-nome {
+  width: 75%;
+  float: left;
+  padding-right: 10px;
+}
+
+.input-idade {
+  width: 25%;
+  float: left;
+  padding-left: 10px;
+}
+
+#listAjax {
+  width: 100%;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+  padding: 25px;
+}
+
+.list-records {
+  width: 100%;
+  border-collapse: collapse;
+  thead th {
+    padding: 10px 0;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #666;
+  }
+  tbody tr {
+    border-top: 1px solid #ddd;
+    td {
+      padding: 10px 10px 10px 0;
+    }
+    &:hover .actions a {
+      visibility: visible;
+    }
+  }
+
+  .actions {
+    > a {
+      visibility: hidden;
+      color: #666;
+      font-size: 14px;
+    }
+  }
+}
+
+.error-message {
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  p {
+    background-color: $red;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 7px;
+    font-size: 12px;
+    float: left;
+  }
 }
